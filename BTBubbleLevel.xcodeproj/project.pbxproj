@@ -8,18 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		91FC3446286DFF7900CD612B /* BTBubbleLevelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC3445286DFF7900CD612B /* BTBubbleLevelApp.swift */; };
-		91FC3448286DFF7900CD612B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC3447286DFF7900CD612B /* ContentView.swift */; };
 		91FC344A286DFF7B00CD612B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FC3449286DFF7B00CD612B /* Assets.xcassets */; };
 		91FC344D286DFF7B00CD612B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FC344C286DFF7B00CD612B /* Preview Assets.xcassets */; };
+		91FC3456286DFFD200CD612B /* TiltDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC3455286DFFD200CD612B /* TiltDetector.swift */; };
+		91FC3459286DFFE400CD612B /* BubbleLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC3458286DFFE400CD612B /* BubbleLevel.swift */; };
+		91FC345C286E000900CD612B /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC345B286E000900CD612B /* DoubleExtension.swift */; };
+		91FC345F286E002000CD612B /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC345E286E002000CD612B /* LevelView.swift */; };
+		91FC3462286E003200CD612B /* OrientationDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC3461286E003200CD612B /* OrientationDataView.swift */; };
+		91FC3465286E004200CD612B /* BusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC3464286E004200CD612B /* BusView.swift */; };
+		91FC3468286E004F00CD612B /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC3467286E004F00CD612B /* SetupView.swift */; };
+		91FC346B286E007300CD612B /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC346A286E007300CD612B /* BLEManager.swift */; };
+		91FC3474286E151900CD612B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FC3473286E151900CD612B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		91FC3442286DFF7900CD612B /* BTBubbleLevel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTBubbleLevel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FC3445286DFF7900CD612B /* BTBubbleLevelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTBubbleLevelApp.swift; sourceTree = "<group>"; };
-		91FC3447286DFF7900CD612B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		91FC3449286DFF7B00CD612B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91FC344C286DFF7B00CD612B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		91FC344E286DFF7B00CD612B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91FC3455286DFFD200CD612B /* TiltDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiltDetector.swift; sourceTree = "<group>"; };
+		91FC3458286DFFE400CD612B /* BubbleLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleLevel.swift; sourceTree = "<group>"; };
+		91FC345B286E000900CD612B /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		91FC345E286E002000CD612B /* LevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelView.swift; sourceTree = "<group>"; };
+		91FC3461286E003200CD612B /* OrientationDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationDataView.swift; sourceTree = "<group>"; };
+		91FC3464286E004200CD612B /* BusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusView.swift; sourceTree = "<group>"; };
+		91FC3467286E004F00CD612B /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		91FC346A286E007300CD612B /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
+		91FC3473286E151900CD612B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +52,7 @@
 		91FC3439286DFF7900CD612B = {
 			isa = PBXGroup;
 			children = (
+				91FC3473286E151900CD612B /* Assets.xcassets */,
 				91FC3444286DFF7900CD612B /* BTBubbleLevel */,
 				91FC3443286DFF7900CD612B /* Products */,
 			);
@@ -53,7 +70,14 @@
 			isa = PBXGroup;
 			children = (
 				91FC3445286DFF7900CD612B /* BTBubbleLevelApp.swift */,
-				91FC3447286DFF7900CD612B /* ContentView.swift */,
+				91FC3455286DFFD200CD612B /* TiltDetector.swift */,
+				91FC3458286DFFE400CD612B /* BubbleLevel.swift */,
+				91FC345B286E000900CD612B /* DoubleExtension.swift */,
+				91FC345E286E002000CD612B /* LevelView.swift */,
+				91FC3461286E003200CD612B /* OrientationDataView.swift */,
+				91FC3464286E004200CD612B /* BusView.swift */,
+				91FC3467286E004F00CD612B /* SetupView.swift */,
+				91FC346A286E007300CD612B /* BLEManager.swift */,
 				91FC3449286DFF7B00CD612B /* Assets.xcassets */,
 				91FC344E286DFF7B00CD612B /* Info.plist */,
 				91FC344B286DFF7B00CD612B /* Preview Content */,
@@ -127,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91FC344D286DFF7B00CD612B /* Preview Assets.xcassets in Resources */,
+				91FC3474286E151900CD612B /* Assets.xcassets in Resources */,
 				91FC344A286DFF7B00CD612B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +163,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91FC3448286DFF7900CD612B /* ContentView.swift in Sources */,
+				91FC345C286E000900CD612B /* DoubleExtension.swift in Sources */,
+				91FC3462286E003200CD612B /* OrientationDataView.swift in Sources */,
+				91FC345F286E002000CD612B /* LevelView.swift in Sources */,
+				91FC3459286DFFE400CD612B /* BubbleLevel.swift in Sources */,
+				91FC3468286E004F00CD612B /* SetupView.swift in Sources */,
+				91FC3465286E004200CD612B /* BusView.swift in Sources */,
+				91FC346B286E007300CD612B /* BLEManager.swift in Sources */,
+				91FC3456286DFFD200CD612B /* TiltDetector.swift in Sources */,
 				91FC3446286DFF7900CD612B /* BTBubbleLevelApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +233,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--generate-entitlement-der";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -255,6 +288,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--generate-entitlement-der";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

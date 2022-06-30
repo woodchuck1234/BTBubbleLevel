@@ -1,17 +1,16 @@
-//
-//  BTBubbleLevelApp.swift
-//  BTBubbleLevel
-//
-//  Created by Matthew Tooley on 6/30/22.
-//
 
 import SwiftUI
 
 @main
-struct BTBubbleLevelApp: App {
+struct BubbleLevelApp: App {
+    //@StateObject private var motionDetector = MotionDetector(updateInterval: 0.01)
+    //@StateObject private var ble = BLEManager()
+    @StateObject var tiltDetector = TiltDetector()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LevelView()
+                .environmentObject(tiltDetector)
         }
     }
 }
