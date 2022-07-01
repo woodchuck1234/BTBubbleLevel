@@ -6,10 +6,13 @@ import SwiftUI
 
 struct OrientationDataView: View {
     @EnvironmentObject var detector: TiltDetector
+    @EnvironmentObject var ble: BLEConnection
 
     var rollString: String {
         //String(tilt.x)
         detector.roll.describeAsFixedLengthString()
+
+        
     }
 
     var pitchString: String {
@@ -19,9 +22,9 @@ struct OrientationDataView: View {
 
     var body: some View {
         VStack {
-            Text("Horizontal: " + rollString)
+            Text("Roll: " + rollString)
                 .font(.system(.body, design: .monospaced))
-            Text("Vertical: " + pitchString)
+            Text("Pitch: " + pitchString)
                 .font(.system(.body, design: .monospaced))
         }
     }

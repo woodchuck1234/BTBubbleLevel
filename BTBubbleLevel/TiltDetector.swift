@@ -7,7 +7,8 @@
 import Foundation
 
 class TiltDetector: ObservableObject {
-    private var bleManager: BLEManagable = BLEManager()
+    //private var bleManager: BLEManagable = BLEManager()
+    private var bleManager = BLEConnection()
     
     @Published var x = 0.0
     @Published var y = 0.0
@@ -15,6 +16,11 @@ class TiltDetector: ObservableObject {
     @Published var pitch: Double = 0
     @Published var roll: Double = 0
     @Published var zAcceleration = 0
+    //Witmotion
+    @Published var imuData: String?
+    @Published var showAlert = false
+    @Published var imuPitch: Double?
+    @Published var imuRoll: Double?
     
     @Published var connected: Bool = false
 
@@ -29,12 +35,7 @@ class TiltDetector: ObservableObject {
     func start() {
         timer = Timer.scheduledTimer(withTimeInterval: updateInterval, repeats: true) { _ in self.updateTiltData()
             }
-
-    }
-    
-    struct Tilt: Codable {
-        var x: Double?
-        var y: Double?
+        bleManager.startCentralManager()
     }
     
     func updateTiltData() {
@@ -48,32 +49,21 @@ class TiltDetector: ObservableObject {
             connected = false
         }
         
-        if !dataString.isEmpty {
-            //print("dataString: \(dataString)")
-            let tiltarray = dataString.components(separatedBy: " ")
-            let x = tiltarray[0]
-            let y = tiltarray[1]
-            roll = Double(x)!
-            pitch = Double(y)!
-            //let data = dataString.data(using: .utf8)!
-            //let decoder = JSONDecoder()
-            //do {
-            //    let tilt = try decoder.decode(Tilt.self, from: data)
-            //    if tilt.x != nil {
-            //        roll = tilt.x ?? 0.0
-            //        print("roll: \(roll)")
-            //    }
-            //    if tilt.y != nil {
-            //        pitch = tilt.y ?? 0.0
-            //        print("pitch \(pitch)")
-            //    }
-            //    //print("roll: \(roll)  pitch: \(pitch)")
-            //} catch {
-            //    print(error)
-            //}
-            
-        }
+        // AdaFruit
+        //if !dataString.isEmpty {
+        //    //print("dataString: \(dataString)")
+        //    let tiltarray = dataString.components(separatedBy: " ")
+        //    let x = tiltarray[0]
+        //    let y = tiltarray[1]
+        //    roll = Double(x)!
+        //    pitch = Double(y)!
+        //}
         
+        // WitMotion
+        //print("dataString: \(dataString)")
+        roll = bleManager.imuRoll ?? 0
+        pitch = bleManager.imuPitch ?? 0
+
     }
     
     func stop() {
@@ -91,6 +81,7 @@ extension TiltDetector: BLEManagerDelegate {
         
     }
     func bleManagerDidDisconnect(_ manager: BLEManagable) {
+        connected = false
 
     }
     

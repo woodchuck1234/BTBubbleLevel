@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9193BFEF286F7E320015CC38 /* scratch in Resources */ = {isa = PBXBuildFile; fileRef = 9193BFEE286F7E320015CC38 /* scratch */; };
+		9193BFF2286F7FE70015CC38 /* Wit901Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9193BFF1286F7FE70015CC38 /* Wit901Manager.swift */; };
 		91FC3446286DFF7900CD612B /* BTBubbleLevelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC3445286DFF7900CD612B /* BTBubbleLevelApp.swift */; };
 		91FC344A286DFF7B00CD612B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FC3449286DFF7B00CD612B /* Assets.xcassets */; };
 		91FC344D286DFF7B00CD612B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FC344C286DFF7B00CD612B /* Preview Assets.xcassets */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9193BFEE286F7E320015CC38 /* scratch */ = {isa = PBXFileReference; lastKnownFileType = text; path = scratch; sourceTree = "<group>"; };
+		9193BFF1286F7FE70015CC38 /* Wit901Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wit901Manager.swift; sourceTree = "<group>"; };
 		91FC3442286DFF7900CD612B /* BTBubbleLevel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTBubbleLevel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FC3445286DFF7900CD612B /* BTBubbleLevelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTBubbleLevelApp.swift; sourceTree = "<group>"; };
 		91FC3449286DFF7B00CD612B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +75,7 @@
 			children = (
 				91FC3445286DFF7900CD612B /* BTBubbleLevelApp.swift */,
 				91FC3455286DFFD200CD612B /* TiltDetector.swift */,
+				9193BFEE286F7E320015CC38 /* scratch */,
 				91FC3458286DFFE400CD612B /* BubbleLevel.swift */,
 				91FC345B286E000900CD612B /* DoubleExtension.swift */,
 				91FC345E286E002000CD612B /* LevelView.swift */,
@@ -78,6 +83,7 @@
 				91FC3464286E004200CD612B /* BusView.swift */,
 				91FC3467286E004F00CD612B /* SetupView.swift */,
 				91FC346A286E007300CD612B /* BLEManager.swift */,
+				9193BFF1286F7FE70015CC38 /* Wit901Manager.swift */,
 				91FC3449286DFF7B00CD612B /* Assets.xcassets */,
 				91FC344E286DFF7B00CD612B /* Info.plist */,
 				91FC344B286DFF7B00CD612B /* Preview Content */,
@@ -153,6 +159,7 @@
 				91FC344D286DFF7B00CD612B /* Preview Assets.xcassets in Resources */,
 				91FC3474286E151900CD612B /* Assets.xcassets in Resources */,
 				91FC344A286DFF7B00CD612B /* Assets.xcassets in Resources */,
+				9193BFEF286F7E320015CC38 /* scratch in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +177,7 @@
 				91FC3468286E004F00CD612B /* SetupView.swift in Sources */,
 				91FC3465286E004200CD612B /* BusView.swift in Sources */,
 				91FC346B286E007300CD612B /* BLEManager.swift in Sources */,
+				9193BFF2286F7FE70015CC38 /* Wit901Manager.swift in Sources */,
 				91FC3456286DFFD200CD612B /* TiltDetector.swift in Sources */,
 				91FC3446286DFF7900CD612B /* BTBubbleLevelApp.swift in Sources */,
 			);

@@ -11,6 +11,7 @@ struct BubbleLevelApp: App {
         WindowGroup {
             LevelView()
                 .environmentObject(tiltDetector)
+
         }
     }
 }

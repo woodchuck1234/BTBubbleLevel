@@ -1,0 +1,60 @@
+
+            switch data[1].wholeNumberValue {
+            case 0x61:
+                //receive IMU data
+                let xAcc = (Double)((Int16)(data[2])|(Int16)(data[3])<<8) / 32768.0 * 16.0 * 9.81
+                let yAcc = (Double)((Int16)(data[4])|(Int16)(data[5])<<8) / 32768.0 * 16.0 * 9.81
+                let zAcc = (Double)((Int16)(data[6])|(Int16)(data[7])<<8) / 32768.0 * 16.0 * 9.81
+
+
+                let xVel = (Double)((Int16)(data[8])|(Int16)(data[9])<<8) / 32768.0 * 2000.0
+                let yVel = (Double)((Int16)(data[10])|(Int16)(data[11])<<8) / 32768.0 * 2000.0
+                let zVel = (Double)((Int16)(data[12])|(Int16)(data[13])<<8) / 32768.0 * 2000.0
+
+                let roll  = (Double)((Int16)(data[14])|(Int16)(data[15])<<8) / 32768.0 * 180.0
+                let pitch = (Double)((Int16)(data[16])|(Int16)(data[17])<<8) / 32768.0 * 180.0
+                let yaw   = (Double)((Int16)(data[18])|(Int16)(data[19])<<8) / 32768.0 * 180.0
+
+                let str = String(format: "X %6.1fg    Y %6.1fg    Z %6.1fg\nRoll %6.1f°    Pitch %6.1f°    Yaw %6.1f°", xAcc, yAcc, zAcc, roll, pitch, yaw)
+                self.sampleCnt += 1
+
+                imuData = str //updates view
+                imuPitch = pitch
+                imuRoll = roll
+
+                print(String(format: "Acc[g]: %6.1f, %6.1f, %6.1f     AngVel[°/s]  %6.1f, %6.1f, %6.1f     Ang[°] %6.1f, %6.1f, %6.1f", xAcc, yAcc, zAcc, xVel, yVel, zVel, roll, pitch, yaw))
+
+                peripheral.writeValue(Data([0xFF, 0xAA, 0x27, 0x3a, 0x00]), for: self.writeChar, type: .withResponse)//request magnetic field
+
+            case 0x71:
+                switch data[2] {
+                    case 0x3a:
+                        //magnetic field
+                        let x = (Int16)(data[4])|(Int16)(data[5])<<8
+                        let y = (Int16)(data[6])|(Int16)(data[7])<<8
+                        let z = (Int16)(data[8])|(Int16)(data[9])<<8
+                        print(String(format: "Hx: %5d   Hy: %5d   Hz: %5d", x, y, z))
+
+                        peripheral.writeValue(Data([0xFF, 0xAA, 0x27, 0x51, 0x00]), for: self.writeChar, type: .withResponse)//request quaternion
+
+                    case 0x51:
+                        //quaternion
+                        let q0 = (Double)((Int16)(data[4])|(Int16)(data[5])<<8) / 32768.0
+                        let q1 = (Double)((Int16)(data[6])|(Int16)(data[7])<<8) / 32768.0
+                        let q2 = (Double)((Int16)(data[8])|(Int16)(data[9])<<8) / 32768.0
+                        let q3 = (Double)((Int16)(data[10])|(Int16)(data[11])<<8) / 32768.0
+
+                        print(String(format:"Q0: %6.1f   Q1: %6.1f   Q2: %6.1f   Q3: %6.1f", q0, q1, q2, q3))
+
+                        peripheral.writeValue(Data([0xFF, 0xAA, 0x27, 0x40, 0x00]), for: self.writeChar, type: .withResponse)//request temperature
+
+                    case 0x40:
+                        //temperature
+                        let temp = (Double)((Int16)(data[4])|(Int16)(data[5])<<8) / 100.0
+                        print("Temperature[°C]: \(temp)")
+
+                    default:
+                        print(String(format: "Unknown sub data flag: 0x%0X",(data[2])))
+                }
+            default:
+                print(String(format: "Unknown data flag: 0x%0X",(data[1])))

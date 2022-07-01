@@ -6,7 +6,8 @@ import SwiftUI
 
 struct BubbleLevel: View {
     @EnvironmentObject var detector: TiltDetector
-    @EnvironmentObject var ble: BLEManager
+    //@EnvironmentObject var ble: BLEManager
+    @EnvironmentObject var ble: BLEConnection
 
     //let range = Double.pi
     let range = 90.0

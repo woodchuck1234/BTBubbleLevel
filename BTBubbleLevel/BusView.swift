@@ -16,15 +16,18 @@ let b = 5 // length of side
 
 struct BusView: View {
     @EnvironmentObject var detector: TiltDetector
+    @EnvironmentObject var ble: BLEConnection
     
     var rollString: String {
         //String(tilt.x)
         detector.roll.describeAsFixedLengthString()
+        //String(ble.imuRoll ?? 0)
     }
 
     var pitchString: String {
         //String(tilt.y)
         detector.pitch.describeAsFixedLengthString()
+        //String(ble.imuPitch ?? 0)
     }
 
     var dfString : String {

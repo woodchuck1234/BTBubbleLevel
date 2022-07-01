@@ -10,11 +10,13 @@ import Foundation
 import CoreBluetooth
 
 private struct BLEConstants {
+    //AdaFruit
     //static let TemperatureService = CBUUID(string: "6e400001-b5a3-f393-e0a9-e50e24dcca9e")
     //static let RXCharacteristic = CBUUID(string: "6e400003-b5a3-f393-e0a9-e50e24dcca9e")
     
-    static let TemperatureService = CBUUID(string: "6e400001-b5a3-f393-e0a9-e50e24dcca9e")
-    static let RXCharacteristic = CBUUID(string: "6e400003-b5a3-f393-e0a9-e50e24dcca9e")
+    //WITMotion
+    static let TemperatureService = CBUUID(string: "0000FFE9-0000-1000-8000-00805F9A34FB")
+    static let RXCharacteristic = CBUUID(string: "0000FFE9-0000-1000-8000-00805F9A34FB")
 }
 
 private struct Weak<T: AnyObject> {

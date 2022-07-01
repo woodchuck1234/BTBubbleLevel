@@ -6,6 +6,7 @@ import SwiftUI
 
 struct LevelView: View {
     @EnvironmentObject var tiltDetector : TiltDetector
+    @ObservedObject var bleConnection = BLEConnection()
 
     var body: some View {
         NavigationView {
@@ -30,8 +31,14 @@ struct LevelView: View {
                     tiltDetector.stop()
                 }
             }
+            .padding()
+            .alert(isPresented: $bleConnection.showAlert, content: {
+                Alert(title: Text("Error"), message: Text("Connection Lost"))
+            })
+            .navigationBarTitle("WT901BLE")
         }
     }
+    
 }
 
 struct LevelView_Previews: PreviewProvider {
@@ -42,4 +49,3 @@ struct LevelView_Previews: PreviewProvider {
             .environmentObject(tiltDetector)
     }
 }
-                                         
