@@ -21,6 +21,9 @@
 		91FC3468286E004F00CD612B /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC3467286E004F00CD612B /* SetupView.swift */; };
 		91FC346B286E007300CD612B /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC346A286E007300CD612B /* BLEManager.swift */; };
 		91FC3474286E151900CD612B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FC3473286E151900CD612B /* Assets.xcassets */; };
+		C949824428A2DA4900E7B6F4 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C949824328A2DA4900E7B6F4 /* Arrow.swift */; };
+		C949824628A2DE6E00E7B6F4 /* ArrowControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C949824528A2DE6E00E7B6F4 /* ArrowControllerView.swift */; };
+		C949824828A2F67A00E7B6F4 /* EQLevelers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C949824728A2F67A00E7B6F4 /* EQLevelers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		91FC3467286E004F00CD612B /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		91FC346A286E007300CD612B /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 		91FC3473286E151900CD612B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C949824328A2DA4900E7B6F4 /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
+		C949824528A2DE6E00E7B6F4 /* ArrowControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowControllerView.swift; sourceTree = "<group>"; };
+		C949824728A2F67A00E7B6F4 /* EQLevelers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQLevelers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,9 @@
 				91FC3449286DFF7B00CD612B /* Assets.xcassets */,
 				91FC344E286DFF7B00CD612B /* Info.plist */,
 				91FC344B286DFF7B00CD612B /* Preview Content */,
+				C949824328A2DA4900E7B6F4 /* Arrow.swift */,
+				C949824528A2DE6E00E7B6F4 /* ArrowControllerView.swift */,
+				C949824728A2F67A00E7B6F4 /* EQLevelers.swift */,
 			);
 			path = BTBubbleLevel;
 			sourceTree = "<group>";
@@ -173,12 +182,15 @@
 				91FC345C286E000900CD612B /* DoubleExtension.swift in Sources */,
 				91FC3462286E003200CD612B /* OrientationDataView.swift in Sources */,
 				91FC345F286E002000CD612B /* LevelView.swift in Sources */,
+				C949824828A2F67A00E7B6F4 /* EQLevelers.swift in Sources */,
 				91FC3459286DFFE400CD612B /* BubbleLevel.swift in Sources */,
 				91FC3468286E004F00CD612B /* SetupView.swift in Sources */,
 				91FC3465286E004200CD612B /* BusView.swift in Sources */,
+				C949824428A2DA4900E7B6F4 /* Arrow.swift in Sources */,
 				91FC346B286E007300CD612B /* BLEManager.swift in Sources */,
 				9193BFF2286F7FE70015CC38 /* Wit901Manager.swift in Sources */,
 				91FC3456286DFFD200CD612B /* TiltDetector.swift in Sources */,
+				C949824628A2DE6E00E7B6F4 /* ArrowControllerView.swift in Sources */,
 				91FC3446286DFF7900CD612B /* BTBubbleLevelApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,7 +326,7 @@
 				DEVELOPMENT_TEAM = JSLFH3S4NY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BTBubbleLevel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,7 +348,7 @@
 				DEVELOPMENT_TEAM = JSLFH3S4NY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BTBubbleLevel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -191,7 +191,8 @@ open class BLEConnection: NSObject, CBPeripheralDelegate, CBCentralManagerDelega
             imuPitch = pitch
             imuRoll = roll
 
-            print(String(format: "Acc[g]: %6.1f, %6.1f, %6.1f     AngVel[°/s]  %6.1f, %6.1f, %6.1f     Ang[°] %6.1f, %6.1f, %6.1f", xAcc, yAcc, zAcc, xVel, yVel, zVel, roll, pitch, yaw))
+            //print(String(format: "Acc[g]: %6.1f, %6.1f, %6.1f     AngVel[°/s]  %6.1f, %6.1f, %6.1f     Ang[°] %6.1f, %6.1f, %6.1f", xAcc, yAcc, zAcc, xVel, yVel, zVel, roll, pitch, yaw))
+            //print(String(format: "Ang[°] %6.2f, %6.2f, %6.2f", roll, pitch, yaw))
 
             peripheral.writeValue(Data([0xFF, 0xAA, 0x27, 0x3a, 0x00]), for: self.writeChar, type: .withResponse)//request magnetic field
 
@@ -202,7 +203,7 @@ open class BLEConnection: NSObject, CBPeripheralDelegate, CBCentralManagerDelega
                     let x = (Int16)(data[4])|(Int16)(data[5])<<8
                     let y = (Int16)(data[6])|(Int16)(data[7])<<8
                     let z = (Int16)(data[8])|(Int16)(data[9])<<8
-                    print(String(format: "Hx: %5d   Hy: %5d   Hz: %5d", x, y, z))
+                    //print(String(format: "Hx: %5d   Hy: %5d   Hz: %5d", x, y, z))
 
                     peripheral.writeValue(Data([0xFF, 0xAA, 0x27, 0x51, 0x00]), for: self.writeChar, type: .withResponse)//request quaternion
 
@@ -213,14 +214,15 @@ open class BLEConnection: NSObject, CBPeripheralDelegate, CBCentralManagerDelega
                     let q2 = (Double)((Int16)(data[8])|(Int16)(data[9])<<8) / 32768.0
                     let q3 = (Double)((Int16)(data[10])|(Int16)(data[11])<<8) / 32768.0
 
-                    print(String(format:"Q0: %6.1f   Q1: %6.1f   Q2: %6.1f   Q3: %6.1f", q0, q1, q2, q3))
+                    //print(String(format:"Q0: %6.1f   Q1: %6.1f   Q2: %6.1f   Q3: %6.1f", q0, q1, q2, q3))
 
                     peripheral.writeValue(Data([0xFF, 0xAA, 0x27, 0x40, 0x00]), for: self.writeChar, type: .withResponse)//request temperature
 
                 case 0x40:
                     //temperature
                     let temp = (Double)((Int16)(data[4])|(Int16)(data[5])<<8) / 100.0
-                    print("Temperature[°C]: \(temp)")
+                    let temp_f = temp * 9/5 + 32
+                    print("Temperature[°C]: \(temp_f)")
 
                 default:
                     print(String(format: "Unknown sub data flag: 0x%0X",(data[2])))
