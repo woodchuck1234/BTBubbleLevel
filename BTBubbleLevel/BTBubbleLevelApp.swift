@@ -1,17 +1,18 @@
-
 import SwiftUI
+
+let settings = Settings()
 
 @main
 struct BubbleLevelApp: App {
     //@StateObject private var motionDetector = MotionDetector(updateInterval: 0.01)
     //@StateObject private var ble = BLEManager()
-    @StateObject var tiltDetector = TiltDetector()
+    //@StateObject var settings = Settings()
 
     var body: some Scene {
         WindowGroup {
-            LevelView()
-                .environmentObject(tiltDetector)
-
+            LevelView(settings: settings)
+                .environmentObject(TiltDetector(settings: settings))
+                .environmentObject(settings)
         }
     }
 }

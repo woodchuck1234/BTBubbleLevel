@@ -29,10 +29,11 @@ struct OrientationDataView: View {
 }
 
 struct OrientationDataView_Previews: PreviewProvider {
-    @StateObject static private var tiltDetector = TiltDetector()
+    @StateObject static private var tiltDetector = TiltDetector(settings: Settings())
     
     static var previews: some View {
         OrientationDataView()
             .environmentObject(tiltDetector)
     }
 }
+

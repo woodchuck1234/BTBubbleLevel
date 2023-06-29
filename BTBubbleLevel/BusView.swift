@@ -76,7 +76,7 @@ struct BusView: View {
     // FRONT // RIGHT
     var dfString : String {
         let dC = distanceToCorner()
-        print("DC: \(dC)  \(tan(detector.roll * .pi / 180.0)) \(tan(detector.pitch * .pi / 180.0) )")
+        //print("DC: \(dC)  \(tan(detector.roll * .pi / 180.0)) \(tan(detector.pitch * .pi / 180.0) )")
         let h = (-dC * (tan(detector.roll * .pi / 180.0) - tan(detector.pitch * .pi / 180.0) ) )
         let stringFloat = String(format: "%.1f", h)
 
@@ -108,7 +108,8 @@ struct BusView: View {
 }
 
 struct BusView_Previews: PreviewProvider {
-    @StateObject static var tiltDetector = TiltDetector()
+    @StateObject static var tiltDetector = TiltDetector(settings: Settings()) // Pass an instance of Settings()
+    
     static var previews: some View {
         GeometryReader { geo in
             BusView(levelCenter: CGPoint(x: geo.size.width / 2, y: geo.size.height / 2), geoSize: geo.size)
@@ -116,3 +117,4 @@ struct BusView_Previews: PreviewProvider {
         }
     }
 }
+

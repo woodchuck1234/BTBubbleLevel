@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0496AB3F2A4DD91D009F85EF /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496AB3E2A4DD91D009F85EF /* Orientation.swift */; };
+		0496AB412A4DE4F3009F85EF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496AB402A4DE4F3009F85EF /* Settings.swift */; };
 		9193BFEF286F7E320015CC38 /* scratch in Resources */ = {isa = PBXBuildFile; fileRef = 9193BFEE286F7E320015CC38 /* scratch */; };
 		9193BFF2286F7FE70015CC38 /* Wit901Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9193BFF1286F7FE70015CC38 /* Wit901Manager.swift */; };
 		91FC3446286DFF7900CD612B /* BTBubbleLevelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC3445286DFF7900CD612B /* BTBubbleLevelApp.swift */; };
@@ -27,9 +29,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0496AB3E2A4DD91D009F85EF /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
+		0496AB402A4DE4F3009F85EF /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		9193BFEE286F7E320015CC38 /* scratch */ = {isa = PBXFileReference; lastKnownFileType = text; path = scratch; sourceTree = "<group>"; };
 		9193BFF1286F7FE70015CC38 /* Wit901Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wit901Manager.swift; sourceTree = "<group>"; };
-		91FC3442286DFF7900CD612B /* BTBubbleLevel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTBubbleLevel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		91FC3442286DFF7900CD612B /* Level Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Level Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FC3445286DFF7900CD612B /* BTBubbleLevelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTBubbleLevelApp.swift; sourceTree = "<group>"; };
 		91FC3449286DFF7B00CD612B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91FC344C286DFF7B00CD612B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -71,7 +75,7 @@
 		91FC3443286DFF7900CD612B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				91FC3442286DFF7900CD612B /* BTBubbleLevel.app */,
+				91FC3442286DFF7900CD612B /* Level Buddy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +100,8 @@
 				C949824328A2DA4900E7B6F4 /* Arrow.swift */,
 				C949824528A2DE6E00E7B6F4 /* ArrowControllerView.swift */,
 				C949824728A2F67A00E7B6F4 /* EQLevelers.swift */,
+				0496AB3E2A4DD91D009F85EF /* Orientation.swift */,
+				0496AB402A4DE4F3009F85EF /* Settings.swift */,
 			);
 			path = BTBubbleLevel;
 			sourceTree = "<group>";
@@ -111,9 +117,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		91FC3441286DFF7900CD612B /* BTBubbleLevel */ = {
+		91FC3441286DFF7900CD612B /* Level Buddy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 91FC3451286DFF7B00CD612B /* Build configuration list for PBXNativeTarget "BTBubbleLevel" */;
+			buildConfigurationList = 91FC3451286DFF7B00CD612B /* Build configuration list for PBXNativeTarget "Level Buddy" */;
 			buildPhases = (
 				91FC343E286DFF7900CD612B /* Sources */,
 				91FC343F286DFF7900CD612B /* Frameworks */,
@@ -123,9 +129,9 @@
 			);
 			dependencies = (
 			);
-			name = BTBubbleLevel;
+			name = "Level Buddy";
 			productName = BTBubbleLevel;
-			productReference = 91FC3442286DFF7900CD612B /* BTBubbleLevel.app */;
+			productReference = 91FC3442286DFF7900CD612B /* Level Buddy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -155,7 +161,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				91FC3441286DFF7900CD612B /* BTBubbleLevel */,
+				91FC3441286DFF7900CD612B /* Level Buddy */,
 			);
 		};
 /* End PBXProject section */
@@ -188,7 +194,9 @@
 				91FC3465286E004200CD612B /* BusView.swift in Sources */,
 				C949824428A2DA4900E7B6F4 /* Arrow.swift in Sources */,
 				91FC346B286E007300CD612B /* BLEManager.swift in Sources */,
+				0496AB412A4DE4F3009F85EF /* Settings.swift in Sources */,
 				9193BFF2286F7FE70015CC38 /* Wit901Manager.swift in Sources */,
+				0496AB3F2A4DD91D009F85EF /* Orientation.swift in Sources */,
 				91FC3456286DFFD200CD612B /* TiltDetector.swift in Sources */,
 				C949824628A2DE6E00E7B6F4 /* ArrowControllerView.swift in Sources */,
 				91FC3446286DFF7900CD612B /* BTBubbleLevelApp.swift in Sources */,
@@ -331,10 +339,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "puffball-designs.BTBubbleLevel";
+				PRODUCT_BUNDLE_IDENTIFIER = "puffball-designs.LevelBuddy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -353,10 +364,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "puffball-designs.BTBubbleLevel";
+				PRODUCT_BUNDLE_IDENTIFIER = "puffball-designs.LevelBuddy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -372,7 +386,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		91FC3451286DFF7B00CD612B /* Build configuration list for PBXNativeTarget "BTBubbleLevel" */ = {
+		91FC3451286DFF7B00CD612B /* Build configuration list for PBXNativeTarget "Level Buddy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				91FC3452286DFF7B00CD612B /* Debug */,

@@ -14,6 +14,7 @@ struct BubbleLevel: View {
     let range = 90.0
     let levelSize: CGFloat = 200
 
+
     // X & Y Position - fraction of entire range, full left - 0.0, flat - 0.5, full right - 1.0
     
     var bubbleXPosition: CGFloat {
@@ -31,6 +32,10 @@ struct BubbleLevel: View {
         return CGFloat(pitchAsFraction) * levelSize
     }
 
+    var batteryLevel: Int {
+        return detector.battery ?? 100
+    }
+    
     var verticalLine: some View {
         Rectangle()
             .frame(width: levelSize, height: 1)
@@ -74,6 +79,13 @@ struct BubbleLevel: View {
     
     var body: some View {
         ZStack {
+            VStack(alignment: .trailing) {
+                Spacer()
+                Image(systemName: "battery.\(batteryLevel)")
+                    .foregroundColor(.green)
+                    .font(.system(size: 24))
+                    .padding(.trailing)
+            }
             GeometryReader { geo in
                 let levelCenter = CGPoint(x: geo.size.width / 2, y: geo.size.height / 2)
                 
@@ -124,12 +136,19 @@ struct BubbleLevel: View {
                     )
             }
         }
+        .onAppear {
+            updateBatteryLevel()
+        }
     }
+    func updateBatteryLevel() {
+        // Do something
+    }
+    
 
 }
 
 struct BubbleLevel_Previews: PreviewProvider {
-    @StateObject static var tiltDetector = TiltDetector()
+    @StateObject static var tiltDetector = TiltDetector(settings: settings)
     @StateObject static var settings = Settings()
 
     static var previews: some View {

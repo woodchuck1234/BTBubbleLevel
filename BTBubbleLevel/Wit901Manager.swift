@@ -23,6 +23,9 @@ open class BLEConnection: NSObject, CBPeripheralDelegate, CBCentralManagerDelega
     @Published var showAlert = false
     @Published var imuPitch: Double?
     @Published var imuRoll: Double?
+    @Published var imuYaw: Double?
+    @Published var battery: Int?
+    @Published var sensorTemp: Double?
     
     var rxDataString = ""
 
@@ -190,9 +193,10 @@ open class BLEConnection: NSObject, CBPeripheralDelegate, CBCentralManagerDelega
             imuData = str //updates view
             imuPitch = pitch
             imuRoll = roll
+            imuYaw = yaw
 
             //print(String(format: "Acc[g]: %6.1f, %6.1f, %6.1f     AngVel[°/s]  %6.1f, %6.1f, %6.1f     Ang[°] %6.1f, %6.1f, %6.1f", xAcc, yAcc, zAcc, xVel, yVel, zVel, roll, pitch, yaw))
-            //print(String(format: "Ang[°] %6.2f, %6.2f, %6.2f", roll, pitch, yaw))
+            print(String(format: "Ang[°] %6.2f, %6.2f, %6.2f", roll, pitch, yaw))
 
             peripheral.writeValue(Data([0xFF, 0xAA, 0x27, 0x3a, 0x00]), for: self.writeChar, type: .withResponse)//request magnetic field
 
@@ -222,7 +226,30 @@ open class BLEConnection: NSObject, CBPeripheralDelegate, CBCentralManagerDelega
                     //temperature
                     let temp = (Double)((Int16)(data[4])|(Int16)(data[5])<<8) / 100.0
                     let temp_f = temp * 9/5 + 32
-                    print("Temperature[°C]: \(temp_f)")
+                    //print("Temperature[°C]: \(temp_f)")
+                    sensorTemp = temp_f
+                
+                    peripheral.writeValue(Data([0xFF, 0xAA, 0x27, 0x64, 0x00]), for: self.writeChar, type: .withResponse)//request pwer
+                
+            case 0x64:
+                // Battery
+                let powerHex = Int(data[4]) | Int(data[5]) << 8
+                let powerDecimal = Int(String(powerHex), radix: 16)!
+                //print("Battery \(powerDecimal)")
+                
+                if powerDecimal > 830 {
+                    battery = 100
+                } else if powerDecimal > 750 && powerDecimal < 831 {
+                    battery = 75
+                } else if powerDecimal > 715 && powerDecimal < 751 {
+                    battery = 50
+                } else if powerDecimal > 684 && powerDecimal < 716 {
+                    battery = 25
+                } else if powerDecimal < 685 {
+                    battery = 0
+                }
+
+                
 
                 default:
                     print(String(format: "Unknown sub data flag: 0x%0X",(data[2])))
